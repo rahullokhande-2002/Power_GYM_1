@@ -1,7 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Member = () => {
+const [member,setMember] = useState([])
+
+  useEffect(()=>{
+    fetchData();
+  },[]);
+
+  const fetchData = async() => {
+try {
+     const result =await axios.get('http://localhost:3000/members');
+   console.log(result.data);
+   setMember(result.data)
+} catch (error) {
+  
+}
+  }
   return (
     <>
       <div className="container mt-5 pt-4">
@@ -31,35 +47,19 @@ const Member = () => {
                   </thead>
 
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Rahul Lokhande</td>
-                      <td>23</td>
-                      <td>169</td>
-                      <td>61</td>
-                      <td>Pune</td>
-                      <td>9876543210</td>
+                    {
+                      member.map((val)=>(
+                           <tr>
+                      <td>{val.id}</td>
+                      <td>{val.fullname}</td>
+                      <td>{val.age}</td>
+                      <td>{val.height}</td>
+                      <td>{val.weight}</td>
+                      <td>{val.city}</td>
+                      <td>{val.mobilenumber}</td>
                     </tr>
-
-                    <tr>
-                      <td>2</td>
-                      <td>Amit Patil</td>
-                      <td>25</td>
-                      <td>172</td>
-                      <td>70</td>
-                      <td>Mumbai</td>
-                      <td>9123456780</td>
-                    </tr>
-
-                    <tr>
-                      <td>3</td>
-                      <td>Rohit Deshmukh</td>
-                      <td>21</td>
-                      <td>168</td>
-                      <td>58</td>
-                      <td>Nashik</td>
-                      <td>9988776655</td>
-                    </tr>
+                      ))
+                    }
                   </tbody>
                 </table>
               </div>

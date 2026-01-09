@@ -6,6 +6,7 @@ import EditMember from './components/members/EditMember';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Member from './components/members/Member';
+import Test from './components/Test';
 
 const App = () => {
   return (
@@ -18,9 +19,7 @@ const App = () => {
         <Route path='/addMembers' element={<AddMembers/>}/>
         <Route path='/editMember' element={<EditMember/>}/>
         <Route path='/login' element={<Login/>}/>
-
-
-
+        <Route path='/test' element={<Test/>}/>
 
   </Routes>
 </Router>
