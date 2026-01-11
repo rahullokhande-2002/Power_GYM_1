@@ -1,22 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { data, NavLink } from "react-router-dom";
 
 const Member = () => {
-const [member,setMember] = useState([])
+  const [member, setMember] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[]);
+  }, []);
 
-  const fetchData = async() => {
-try {
-     const result =await axios.get('http://localhost:3000/members');
-   console.log(result.data);
-   setMember(result.data)
-} catch (error) {
-  
-}
+  const fetchData = async () => {
+    try {
+      const result = await axios.get('http://localhost:3000/members');
+      console.log(result.data);
+      setMember(result.data)
+    } catch (error) {
+
+    }
+  }
+
+  const deleteData = (id) => {
+    axios.delete(`http://localhost:3000/members/${id}`)
+    //  alert(id);
+    setMember(member.filter((user) => user.id !== id));
   }
   return (
     <>
@@ -28,36 +34,68 @@ try {
               <div className="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h4 className="mb-0">Gym Members</h4>
                 <button className="btn btn-danger btn-sm">
-                  <NavLink to='/addMembers' >+AddMember</NavLink>
+                  <NavLink
+                    to="/addMembers"
+                    className="text-white text-decoration-none"
+                  >
+                    + Add Member
+                  </NavLink>
                 </button>
+
               </div>
 
               <div className="card-body table-responsive">
                 <table className="table table-bordered table-hover text-center align-middle">
                   <thead className="table-dark">
                     <tr>
-                      <th>ID</th>
+
                       <th>Full Name</th>
                       <th>Age</th>
                       <th>Height (cm)</th>
                       <th>Weight (kg)</th>
                       <th>City</th>
                       <th>Mobile</th>
+                      <th>Delete</th>
+                      <th>Edit</th>
                     </tr>
                   </thead>
 
                   <tbody>
                     {
-                      member.map((val)=>(
-                           <tr>
-                      <td>{val.id}</td>
-                      <td>{val.fullname}</td>
-                      <td>{val.age}</td>
-                      <td>{val.height}</td>
-                      <td>{val.weight}</td>
-                      <td>{val.city}</td>
-                      <td>{val.mobilenumber}</td>
-                    </tr>
+                      member.map((val) => (
+                        <tr>
+
+                          <td>{val.fullname}</td>
+                          <td>{val.age}</td>
+                          <td>{val.height}</td>
+                          <td>{val.weight}</td>
+                          <td>{val.city}</td>
+                          <td>{val.mobilenumber}</td>
+                          <td className="text-center">
+                            <button
+                              className="btn btn-outline-dark btn-sm"
+                              onClick={() => {
+                                if (window.confirm("Are you sure you want to delete this member?")) {
+                                  deleteData(val.id);
+                                }
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </td>
+
+                          <td>
+                            <NavLink
+  to={`/editMember/${val.id}`}
+  className="btn btn-outline-primary btn-sm me-2"
+>
+  Edit
+</NavLink>
+
+                          </td>
+
+
+                        </tr>
                       ))
                     }
                   </tbody>

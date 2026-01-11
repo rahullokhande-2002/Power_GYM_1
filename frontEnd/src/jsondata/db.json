@@ -54,48 +54,30 @@
   },
   "members": [
     {
-      "id": 1,
-      "fullname": "Rahul Lokhande",
-      "age": 25,
-      "height": 165,
-      "weight": 64,
-      "city": "Kolhapur",
-      "mobilenumber": "9099456361"
+      "fullname": "Rahul shivaji lokhnade",
+      "age": "222",
+      "height": "",
+      "weight": "",
+      "city": "satara",
+      "mobilenumber": "9099456361",
+      "id": 3
     },
     {
-      "id": 2,
-      "fullname": "Amit Patil",
-      "age": 22,
-      "height": 170,
-      "weight": 70,
-      "city": "Pune",
-      "mobilenumber": "9876543210"
-    },
-    {
-      "id": 3,
-      "fullname": "Rohit Sharma",
-      "age": 28,
-      "height": 175,
-      "weight": 75,
-      "city": "Mumbai",
-      "mobilenumber": "9999999999"
-    },
-    {
-      "id": 4,
-      "fullname": "Sanket Jadhav",
-      "age": 24,
-      "height": 168,
-      "weight": 68,
-      "city": "Kolhapur",
-      "mobilenumber": "8888888888"
-    },
-    {
-      "fullname": "yash khatal",
-      "age": "23",
-      "height": "170",
-      "weight": "69",
-      "city": "solapur",
+      "fullname": "suyash",
+      "age": "22",
+      "height": "",
+      "weight": "",
+      "city": "pune",
       "mobilenumber": "9081109040",
+      "id": 4
+    },
+    {
+      "fullname": "",
+      "age": "",
+      "height": "",
+      "weight": "",
+      "city": "solapur",
+      "mobilenumber": "",
       "id": 5
     }
   ]

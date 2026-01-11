@@ -32,22 +32,17 @@ const Home = () => {
           {/* Slide 1 */}
           <div className="carousel-item active">
             <img
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b"
+              src="./p2.avif"
               className="d-block w-100"
               alt="Gym"
               style={{ height: "85vh", objectFit: "cover" }}
             />
             <div className="carousel-caption d-flex flex-column justify-content-center h-100">
-              <h1 className="fw-bold">GYM MANAGEMENT SYSTEM</h1>
-              <p className="lead">
+              <h1 className="fw-bold" style={{color:"white"}}>GYM MANAGEMENT SYSTEM</h1>
+              <p className="lead fw-bold" style={{color:"white"}}>
                 Manage Members, Payments & Trainers Easily
               </p>
-              <div>
-                <button className="btn btn-danger me-2">Get Started</button>
-                <button className="btn btn-outline-light">
-                  View Dashboard
-                </button>
-              </div>
+         
             </div>
           </div>
 
@@ -66,18 +61,7 @@ const Home = () => {
           </div>
 
           {/* Slide 3 */}
-          <div className="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1599058917212-d750089bc07d"
-              className="d-block w-100"
-              alt="Training"
-              style={{ height: "85vh", objectFit: "cover" }}
-            />
-            <div className="carousel-caption">
-              <h1 className="fw-bold">SMART GYM SOLUTIONS</h1>
-              <p>Reports, Payments & performance analytics</p>
-            </div>
-          </div>
+      
         </div>
 
         {/* Controls */}

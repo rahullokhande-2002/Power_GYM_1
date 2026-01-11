@@ -6,7 +6,7 @@ import EditMember from './components/members/EditMember';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Member from './components/members/Member';
-import Test from './components/Test';
+import Dashboard from './components/Dashboard';
 
 const App = () => {
   return (
@@ -17,9 +17,15 @@ const App = () => {
     <Route path='/' element={<Home/>}/>
         <Route path='/member' element={<Member/>}/>
         <Route path='/addMembers' element={<AddMembers/>}/>
-        <Route path='/editMember' element={<EditMember/>}/>
+        {/* <Route path='/editMember' element={<EditMember/>}/> */}
+
+<Route path="/editMember/:id" element={<EditMember />} />
+
+
         <Route path='/login' element={<Login/>}/>
-        <Route path='/test' element={<Test/>}/>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}/>
+        <Route path="/login" element={<Login />} />
+
 
   </Routes>
 </Router>

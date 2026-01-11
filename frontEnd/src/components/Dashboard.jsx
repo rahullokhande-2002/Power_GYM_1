@@ -24,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-const Test = () => {
+const Dashboard = () => {
   const [members, setMembers] = useState([]);
   const [membersByCity, setMembersByCity] = useState({});
 
@@ -118,4 +118,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Dashboard;
