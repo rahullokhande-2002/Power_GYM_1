@@ -75,7 +75,7 @@ const Home = () => {
             />
             <div className="carousel-caption">
               <h1 className="fw-bold">SMART GYM SOLUTIONS</h1>
-              <p>Reports, payments & performance analytics</p>
+              <p>Reports, Payments & performance analytics</p>
             </div>
           </div>
         </div>
