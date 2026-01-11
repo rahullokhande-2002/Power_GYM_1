@@ -72,11 +72,13 @@
       "id": 4
     },
     {
-      "fullname": "",
+      "fullname": "new",
       "age": "",
       "height": "",
-      "weight": "",
-      "city": "solapur",
+      "weight": "23",
+      "exerciseType": "Weight Training",
+      "gymDuration": "3 Months",
+      "gymFee": "2199",
       "mobilenumber": "",
       "id": 5
     }

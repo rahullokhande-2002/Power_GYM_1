@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const EditMember = () => {
-  const { id } = useParams(); // get id from URL
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [member, setMember] = useState({
@@ -11,29 +11,40 @@ const EditMember = () => {
     age: "",
     height: "",
     weight: "",
-    city: "",
+    exerciseType: "",
+    gymDuration: "",
+    gymFee: "",
     mobilenumber: ""
   });
 
-  // fetch single member
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/members/${id}`)
-      .then((res) => setMember(res.data))
-      .catch((err) => console.log(err));
+    const fetchMember = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/members/${id}`);
+        setMember(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchMember();
   }, [id]);
 
-  // handle input change
   const handleChange = (e) => {
     setMember({ ...member, [e.target.name]: e.target.value });
   };
 
-  // update member
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3000/members/${id}`, member);
-    alert("Member Updated Successfully");
-    navigate("/members"); // go back to list page
+
+    try {
+      await axios.put(`http://localhost:3000/members/${id}`, member);
+      alert("Member Updated Successfully");
+      navigate("/member");
+    } catch (error) {
+      console.log(error);
+      alert("Update failed");
+    }
   };
 
   return (
@@ -93,12 +104,44 @@ const EditMember = () => {
               </div>
 
               <div className="col-md-6">
-                <label>City</label>
+                <label>Exercise Type</label>
+                <select
+                  className="form-select"
+                  name="exerciseType"
+                  value={member.exerciseType}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Exercise</option>
+                  <option value="Cardio">Cardio</option>
+                  <option value="Weight Training">Weight Training</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="CrossFit">CrossFit</option>
+                </select>
+              </div>
+
+              <div className="col-md-6">
+                <label>Gym Duration</label>
+                <select
+                  className="form-select"
+                  name="gymDuration"
+                  value={member.gymDuration}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Duration</option>
+                  <option value="1 Month">1 Month</option>
+                  <option value="3 Months">3 Months</option>
+                  <option value="6 Months">6 Months</option>
+                  <option value="1 Year">1 Year</option>
+                </select>
+              </div>
+
+              <div className="col-md-6">
+                <label>Gym Fee (₹)</label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
-                  name="city"
-                  value={member.city}
+                  name="gymFee"
+                  value={member.gymFee}
                   onChange={handleChange}
                 />
               </div>
@@ -117,16 +160,18 @@ const EditMember = () => {
             </div>
 
             <div className="mt-4 text-center">
-              <button className="btn btn-success me-2">Update</button>
+              <button type="submit" className="btn btn-success me-2">
+                Update
+              </button>
               <button
                 type="button"
                 className="btn btn-secondary"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate("/members")}
               >
-                Cancel button
-  
+                Cancel
               </button>
             </div>
+
           </form>
         </div>
       </div>
