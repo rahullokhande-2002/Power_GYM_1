@@ -17,13 +17,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Dummy login check (json-server)
-    const res = await axios.get("http://localhost:3000/profile");
+    // Dummy login check
+    await axios.get("http://localhost:3000/profile");
 
-    if (
-      user.email === "admin@gmail.com" &&
-      user.password === "12345"
-    ) {
+    if (user.email === "admin@gmail.com" && user.password === "12345") {
       alert("Login Successful");
       navigate("/dashboard");
     } else {
@@ -32,9 +29,33 @@ const Login = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-4 shadow" style={{ width: "350px" }}>
-        <h3 className="text-center mb-3">Login</h3>
+    <div
+      style={{
+        backgroundImage: "url('./p2.avif')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {/* Blur Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backdropFilter: "blur(8px)",
+          backgroundColor: "rgba(0,0,0,0.5)",
+        }}
+      ></div>
+
+      {/* Login Card */}
+      <div
+        className="card p-4 shadow position-relative"
+        style={{ width: "350px", zIndex: 1 }}
+      >
+        <h3 className="text-center mb-3 fw-bold">Admin Login</h3>
 
         <form onSubmit={handleSubmit}>
           <input

@@ -1,143 +1,109 @@
 import React from "react";
+import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      {/* CAROUSEL */}
-      <div
-        id="gymCarousel"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#gymCarousel"
-            data-bs-slide-to="0"
-            className="active"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#gymCarousel"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#gymCarousel"
-            data-bs-slide-to="2"
-          ></button>
-        </div>
-
+      {/* ===== HERO ===== */}
+      <div className="carousel slide">
         <div className="carousel-inner">
-          {/* Slide 1 */}
-          <div className="carousel-item active">
+          <div className="carousel-item active position-relative">
             <img
               src="./p2.avif"
               className="d-block w-100"
               alt="Gym"
-              style={{ height: "85vh", objectFit: "cover" }}
+              style={{ height: "90vh", objectFit: "cover" }}
             />
-            <div className="carousel-caption d-flex flex-column justify-content-center h-100">
-              <h1 className="fw-bold" style={{color:"white"}}>GYM MANAGEMENT SYSTEM</h1>
-              <p className="lead fw-bold" style={{color:"white"}}>
-                Manage Members, Payments & Trainers Easily
+
+            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+
+            <div className="carousel-caption d-flex flex-column justify-content-center h-100 text-center">
+              <h1 className="fw-bold display-4">GYM MANAGEMENT SYSTEM</h1>
+              <p className="lead">
+                Smart way to manage Members, Trainers & Payments
               </p>
-         
+              <div>
+                <a
+                  href="/addMembers"
+                  className="btn btn-danger btn-lg me-2 animated-btn"
+                >
+                  Add Member
+                </a>
+                <a
+                  href="/member"
+                  className="btn btn-outline-light btn-lg animated-btn"
+                >
+                  View Members
+                </a>
+              </div>
             </div>
           </div>
-
-          {/* Slide 2 */}
-          <div className="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1"
-              className="d-block w-100"
-              alt="Workout"
-              style={{ height: "85vh", objectFit: "cover" }}
-            />
-            <div className="carousel-caption">
-              <h1 className="fw-bold">POWER YOUR FITNESS BUSINESS</h1>
-              <p>Track members & revenue in real time</p>
-            </div>
-          </div>
-
-          {/* Slide 3 */}
-      
         </div>
-
-        {/* Controls */}
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#gymCarousel"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#gymCarousel"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon"></span>
-        </button>
       </div>
 
-      {/* FEATURES */}
-      <section className="container py-5 text-center">
-        <h2 className="fw-bold mb-4">SYSTEM FEATURES</h2>
+      {/* ===== FEATURES ===== */}
+      <section className="container py-5">
+        <div className="text-center mb-5">
+          <h2 className="fw-bold">System Features</h2>
+          <p className="text-muted">
+            Everything you need to run your gym professionally
+          </p>
+        </div>
 
         <div className="row g-4">
           {[
-            ["Member Management", "Add, update & track gym members."],
-            ["Trainer Control", "Manage trainers & workout plans."],
-            ["Payment Tracking", "Fees, invoices & payment history."],
-            ["Reports", "Revenue & attendance analytics."],
-          ].map((item, index) => (
-            <div className="col-md-3" key={index}>
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5>{item[0]}</h5>
-                  <p>{item[1]}</p>
-                </div>
+            ["👤", "Member Management", "Add, update and track members"],
+            ["🏋️", "Trainer Control", "Assign trainers & workouts"],
+            ["💳", "Payment Tracking", "Track fees & payment history"],
+            ["📊", "Reports", "Revenue & attendance analytics"],
+          ].map((item, i) => (
+            <div className="col-md-3" key={i}>
+              <div className="card feature-card h-100 border-0 text-center p-3">
+                <div className="display-5 mb-3 icon">{item[0]}</div>
+                <h5 className="fw-bold">{item[1]}</h5>
+                <p className="text-muted small">{item[2]}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* PLANS */}
+      {/* ===== PRICING ===== */}
       <section className="bg-light py-5">
         <div className="container text-center">
-          <h2 className="fw-bold mb-4">MEMBERSHIP PLANS</h2>
+          <h2 className="fw-bold mb-4">Membership Plans</h2>
 
           <div className="row g-4 justify-content-center">
             <div className="col-md-4">
-              <div className="card h-100 shadow">
+              <div className="card pricing-card h-100 border-0">
                 <div className="card-body">
-                  <h3 className="text-danger">₹999</h3>
-                  <p>Monthly</p>
-                  <ul className="list-unstyled">
+                  <h6 className="text-muted">Monthly</h6>
+                  <h1 className="fw-bold text-danger">₹999</h1>
+                  <ul className="list-unstyled my-3">
                     <li>✔ Gym Access</li>
                     <li>✔ Basic Trainer</li>
                     <li>✔ 6 Days / Week</li>
                   </ul>
-                  <button className="btn btn-danger">Choose Plan</button>
+                  <button className="btn btn-danger w-100 animated-btn">
+                    Choose Plan
+                  </button>
                 </div>
               </div>
             </div>
 
             <div className="col-md-4">
-              <div className="card h-100 border-danger shadow">
+              <div className="card pricing-card h-100 border-danger">
                 <div className="card-body">
-                  <h3 className="text-danger">₹2499</h3>
-                  <p>Quarterly</p>
-                  <ul className="list-unstyled">
+                  <h6 className="text-muted">Quarterly</h6>
+                  <h1 className="fw-bold text-danger">₹2499</h1>
+                  <ul className="list-unstyled my-3">
                     <li>✔ All Equipment</li>
                     <li>✔ Personal Trainer</li>
                     <li>✔ Diet Guidance</li>
                   </ul>
-                  <button className="btn btn-danger">Choose Plan</button>
+                  <button className="btn btn-danger w-100 animated-btn">
+                    Choose Plan
+                  </button>
                 </div>
               </div>
             </div>
@@ -145,53 +111,45 @@ const Home = () => {
         </div>
       </section>
 
-     
+      {/* ===== FOOTER ===== */}
+      <footer className="bg-dark text-light pt-5">
+        <div className="container">
+          <div className="row g-4">
+            {/* About */}
+            <div className="col-md-4">
+              <h5 className="fw-bold text-danger">Power Gym</h5>
+              <p className="small text-muted">
+                Power Gym Management System helps gym owners manage members,
+                trainers, payments and reports efficiently.
+              </p>
+            </div>
 
-      {/* FOOTER */}
-   <footer className="bg-black text-white pt-4">
-  <div className="container">
-    <div className="row text-start">
+            {/* Quick Links */}
+            <div className="col-md-4">
+              <h6 className="fw-bold">Quick Links</h6>
+              <ul className="list-unstyled small">
+                <li><a href="/" className="text-decoration-none text-light">Home</a></li>
+                <li><a href="/member" className="text-decoration-none text-light">Members</a></li>
+                <li><a href="/addMembers" className="text-decoration-none text-light">Add Member</a></li>
+              </ul>
+            </div>
 
-      {/* Gym Info */}
-      <div className="col-md-4 mb-3">
-        <h5 className="text-danger fw-bold">Power Gym</h5>
-        <p className="small">
-          Professional gym management system to manage members,
-          trainers, payments & reports efficiently.
-        </p>
-      </div>
+            {/* Contact */}
+            <div className="col-md-4">
+              <h6 className="fw-bold">Contact</h6>
+              <p className="small mb-1">📍 Kolhapur, India</p>
+              <p className="small mb-1">📞 +91 9359 703371</p>
+              <p className="small">✉️ powergym@gmail.com</p>
+            </div>
+          </div>
 
-      {/* Contact Info */}
-      <div className="col-md-4 mb-3">
-        <h6 className="fw-bold">Contact Us</h6>
-        <p className="mb-1">📍 Kolhapur, Maharashtra</p>
-        <p className="mb-1">📞 +91 90994 56361</p>
-        <p className="mb-1">📧 powergym@gmail.com</p>
-      </div>
+          <hr className="border-secondary mt-4" />
 
-      {/* Quick Links */}
-      <div className="col-md-4 mb-3">
-        <h6 className="fw-bold">Quick Links</h6>
-        <ul className="list-unstyled">
-          <li><a href="/" className="text-white text-decoration-none">Home</a></li>
-          <li><a href="/member" className="text-white text-decoration-none">Members</a></li>
-          <li><a href="/addMembers" className="text-white text-decoration-none">Add Member</a></li>
-          <li><a href="/test" className="text-white text-decoration-none">Dashboard</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <hr className="border-secondary" />
-
-    <div className="text-center pb-3">
-      <p className="mb-0 small">
-        © {new Date().getFullYear()} Power Gym Management System | All Rights Reserved
-      </p>
-    </div>
-  </div>
-</footer>
-
+          <div className="text-center pb-3 small">
+            © {new Date().getFullYear()} Power Gym. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

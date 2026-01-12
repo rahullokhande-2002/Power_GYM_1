@@ -54,15 +54,6 @@
   },
   "members": [
     {
-      "fullname": "Rahul shivaji lokhnade",
-      "age": "222",
-      "height": "",
-      "weight": "",
-      "city": "satara",
-      "mobilenumber": "9099456361",
-      "id": 3
-    },
-    {
       "fullname": "suyash",
       "age": "22",
       "height": "",
@@ -72,15 +63,15 @@
       "id": 4
     },
     {
-      "fullname": "new",
-      "age": "",
-      "height": "",
-      "weight": "23",
+      "fullname": "hemant",
+      "age": "22",
+      "height": "164",
+      "weight": "67",
       "exerciseType": "Weight Training",
-      "gymDuration": "3 Months",
-      "gymFee": "2199",
-      "mobilenumber": "",
-      "id": 5
+      "gymDuration": "1 Year",
+      "gymFee": "25000",
+      "mobilenumber": "9081109040",
+      "id": 7
     }
   ]
 }
