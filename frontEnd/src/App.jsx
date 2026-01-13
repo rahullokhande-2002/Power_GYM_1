@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Member from './components/members/Member';
 import Dashboard from './components/Dashboard';
+import About from './components/About';
 
 const App = () => {
   return (
@@ -24,7 +25,9 @@ const App = () => {
 
         <Route path='/login' element={<Login/>}/>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}/>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />  
+        
+                 <Route path="/about" element={<About/>} />
 
 
   </Routes>

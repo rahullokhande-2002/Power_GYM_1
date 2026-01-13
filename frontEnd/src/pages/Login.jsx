@@ -22,7 +22,7 @@ const Login = () => {
 
     if (user.email === "admin@gmail.com" && user.password === "12345") {
       alert("Login Successful");
-      navigate("/dashboard");
+      navigate("/member");
     } else {
       alert("Invalid Credentials");
     }

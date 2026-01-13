@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const AddMembers = () => {
   const [data, setData] = useState({
@@ -146,7 +147,7 @@ const AddMembers = () => {
                     />
                   </div>
 
-                  {/* Mobile Number */}
+                  {/* Mobile */}
                   <div className="col-md-6">
                     <label className="form-label">Mobile Number</label>
                     <input
@@ -160,10 +161,15 @@ const AddMembers = () => {
 
                 </div>
 
-                <div className="d-grid mt-4">
+                {/* Buttons */}
+                <div className="d-flex justify-content-center gap-3 mt-4">
                   <button type="submit" className="btn btn-danger">
                     Add Member
                   </button>
+
+                  <NavLink to="/member" className="btn btn-danger">
+                    View Members
+                  </NavLink>
                 </div>
 
               </form>

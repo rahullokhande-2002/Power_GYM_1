@@ -33,9 +33,17 @@ const Member = () => {
           <div className="card shadow">
             <div className="card-header bg-dark text-white d-flex justify-content-between align-items-center">
               <h4 className="mb-0">Gym Members</h4>
-              <NavLink to="/addMembers" className="btn btn-danger btn-sm">
-                + Add Member
-              </NavLink>
+
+              {/* Header Buttons */}
+              <div className="d-flex gap-2">
+                <NavLink to="/dashboard" className="btn btn-danger btn-sm">
+                  Dashboard
+                </NavLink>
+
+                <NavLink to="/addMembers" className="btn btn-danger btn-sm">
+                  + Add Member
+                </NavLink>
+              </div>
             </div>
 
             <div className="card-body table-responsive">

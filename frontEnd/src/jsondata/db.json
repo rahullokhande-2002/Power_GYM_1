@@ -72,6 +72,17 @@
       "gymFee": "25000",
       "mobilenumber": "9081109040",
       "id": 7
+    },
+    {
+      "fullname": "Rahul shivaji  Lokhande",
+      "age": "",
+      "height": "",
+      "weight": "",
+      "exerciseType": "",
+      "gymDuration": "",
+      "gymFee": "",
+      "mobilenumber": "",
+      "id": 8
     }
   ]
 }
