@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast, Zoom, Slide } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,8 +21,13 @@ const Login = () => {
     // Dummy login check
     await axios.get("http://localhost:3000/profile");
 
-    if (user.email === "admin@gmail.com" && user.password === "12345") {
-      alert("Login Successful");
+    if (user.email === "admin@gmail.com" && user.password === "@123") {
+      // alert("Login Successful");
+     toast.success("login Successfully", {
+  transition: Zoom,
+   autoClose: 500
+});
+
       navigate("/member");
     } else {
       alert("Invalid Credentials");

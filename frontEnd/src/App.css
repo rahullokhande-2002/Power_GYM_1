@@ -1,0 +1,22 @@
+.footer-bg-image {
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.footer-bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+.footer-bg-image h5,
+.footer-bg-image p {
+  position: relative;
+  z-index: 1;
+}

@@ -112,44 +112,7 @@ const Home = () => {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="bg-dark text-light pt-5">
-        <div className="container">
-          <div className="row g-4">
-            {/* About */}
-            <div className="col-md-4">
-              <h5 className="fw-bold text-danger">Power Gym</h5>
-              <p className="small text-muted">
-                Power Gym Management System helps gym owners manage members,
-                trainers, payments and reports efficiently.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="col-md-4">
-              <h6 className="fw-bold">Quick Links</h6>
-              <ul className="list-unstyled small">
-                <li><a href="/" className="text-decoration-none text-light">Home</a></li>
-                <li><a href="/member" className="text-decoration-none text-light">Members</a></li>
-                <li><a href="/addMembers" className="text-decoration-none text-light">Add Member</a></li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div className="col-md-4">
-              <h6 className="fw-bold">Contact</h6>
-              <p className="small mb-1">📍 Kolhapur, India</p>
-              <p className="small mb-1">📞 +91 9359 703371</p>
-              <p className="small">✉️ powergym@gmail.com</p>
-            </div>
-          </div>
-
-          <hr className="border-secondary mt-4" />
-
-          <div className="text-center pb-3 small">
-            © {new Date().getFullYear()} Power Gym. All Rights Reserved.
-          </div>
-        </div>
-      </footer>
+      
     </>
   );
 };

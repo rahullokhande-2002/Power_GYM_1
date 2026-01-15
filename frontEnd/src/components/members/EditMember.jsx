@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import { toast, Zoom, Slide } from "react-toastify";
+
+
 const EditMember = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -39,7 +42,10 @@ const EditMember = () => {
 
     try {
       await axios.put(`http://localhost:3000/members/${id}`, member);
-      alert("Member Updated Successfully");
+      // alert("Member Updated Successfully");
+     toast.warning("Updated Successfully", {
+  transition: Zoom,
+});
       navigate("/member");
     } catch (error) {
       console.log(error);
@@ -48,7 +54,7 @@ const EditMember = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5"style={{paddingTop: 50 }}>
       <div className="card shadow">
         <div className="card-header bg-dark text-white">
           <h4>Edit Gym Member</h4>
@@ -149,7 +155,7 @@ const EditMember = () => {
               <div className="col-md-6">
                 <label>Mobile Number</label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   name="mobilenumber"
                   value={member.mobilenumber}

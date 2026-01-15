@@ -63,18 +63,7 @@
       "id": 4
     },
     {
-      "fullname": "hemant",
-      "age": "22",
-      "height": "164",
-      "weight": "67",
-      "exerciseType": "Weight Training",
-      "gymDuration": "1 Year",
-      "gymFee": "25000",
-      "mobilenumber": "9081109040",
-      "id": 7
-    },
-    {
-      "fullname": "Rahul shivaji  Lokhande",
+      "fullname": "www",
       "age": "",
       "height": "",
       "weight": "",
@@ -82,7 +71,7 @@
       "gymDuration": "",
       "gymFee": "",
       "mobilenumber": "",
-      "id": 8
+      "id": 5
     }
   ]
 }

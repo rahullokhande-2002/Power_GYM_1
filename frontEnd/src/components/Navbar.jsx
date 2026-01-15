@@ -39,8 +39,15 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="#">Reports</Link>
+              <Link className="nav-link" to="/contactUs ">Contact </Link>
             </li>
+
+             <li className="nav-item">
+              <Link className="nav-link" to="/trainer">Trainer </Link>
+            </li>
+            
+
+            
           </ul>
 
           {/* Login Button */}

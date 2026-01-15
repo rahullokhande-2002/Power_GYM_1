@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { toast, Slide } from "react-toastify";
 
 const Member = () => {
   const [member, setMember] = useState([]);
@@ -18,10 +19,25 @@ const Member = () => {
     }
   };
 
+  // ✅ DELETE FUNCTION WITH TOAST
   const deleteData = async (id) => {
     if (window.confirm("Are you sure you want to delete this member?")) {
-      await axios.delete(`http://localhost:3000/members/${id}`);
-      setMember(member.filter((user) => user.id !== id));
+      
+    // toast.info("Deleting member...", { transition: Slide });
+      try {
+        await axios.delete(`http://localhost:3000/members/${id}`);
+
+        setMember(member.filter((user) => user.id !== id));
+
+        toast.danger("Member Deleted Successfully!", {
+          transition: Slide,
+        });
+
+      } catch (error) {
+        toast.error("Deleted Feild!", {
+          transition: Slide,
+        });
+      }
     }
   };
 
@@ -29,12 +45,10 @@ const Member = () => {
     <div className="container mt-5 pt-4">
       <div className="row">
         <div className="col-12">
-
           <div className="card shadow">
             <div className="card-header bg-dark text-white d-flex justify-content-between align-items-center">
               <h4 className="mb-0">Gym Members</h4>
 
-              {/* Header Buttons */}
               <div className="d-flex gap-2">
                 <NavLink to="/dashboard" className="btn btn-danger btn-sm">
                   Dashboard
@@ -52,11 +66,11 @@ const Member = () => {
                   <tr>
                     <th>Full Name</th>
                     <th>Age</th>
-                    <th>Height (cm)</th>
-                    <th>Weight (kg)</th>
-                    <th>Exercise Type</th>
-                    <th>Gym Duration</th>
-                    <th>Gym Fee (₹)</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Exercise</th>
+                    <th>Duration</th>
+                    <th>Fee</th>
                     <th>Mobile</th>
                     <th>Delete</th>
                     <th>Edit</th>
@@ -99,7 +113,6 @@ const Member = () => {
               </table>
             </div>
           </div>
-
         </div>
       </div>
     </div>

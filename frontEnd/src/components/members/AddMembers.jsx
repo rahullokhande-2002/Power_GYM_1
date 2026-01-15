@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { toast, Zoom } from "react-toastify";
+
 
 const AddMembers = () => {
   const [data, setData] = useState({
@@ -22,7 +24,12 @@ const AddMembers = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:3000/members", data);
-      alert("Member Added Successfully");
+
+      // alert("Member Added Successfully");
+      toast.success("Member Added Successfully!", {
+  transition: Zoom,
+});
+
       setData({
         fullname: "",
         age: "",

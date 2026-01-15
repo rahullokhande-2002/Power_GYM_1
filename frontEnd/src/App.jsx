@@ -8,6 +8,13 @@ import Navbar from './components/Navbar';
 import Member from './components/members/Member';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
+import ContactUs from './components/ContactUs ';
+import Footer from './components/Footer';
+import Trainer from './components/Trainer';
+
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const App = () => {
   return (
@@ -28,11 +35,21 @@ const App = () => {
         <Route path="/login" element={<Login />} />  
         
                  <Route path="/about" element={<About/>} />
+<Route path="/contactUs" element={<ContactUs/>} />
+<Route path="/trainer" element={<Trainer/>} />
 
 
   </Routes>
+  <Footer></Footer>
 </Router>
 
+
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        transition={Bounce}  // dounce for toaster
+        theme="dark"
+      />
 </>  )
 }
 
